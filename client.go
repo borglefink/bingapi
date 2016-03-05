@@ -28,7 +28,9 @@ func GetClient(accessKey string) Client {
 	}
 }
 
-// Composite - executing Composite type Bing Web API search
+// Composite - executing Composite type Bing Web API search. Returns a CompositeResultContainer
+// containing a slice of CompositeResult, where only the first element is used.
+// See documentation for CompositeResultContainer and CompositeResult.
 func (client Client) Composite(parameters Parameters) (CompositeResultContainer, error) {
 	var result CompositeResultWrapper
 
@@ -39,7 +41,9 @@ func (client Client) Composite(parameters Parameters) (CompositeResultContainer,
 	return result.Data, nil
 }
 
-// Web - executing Web type Bing Web API search
+// Web - executing Web type Bing Web API search. Returns a WebResultContainer
+// containing a slice of WebResult and an URI for next page.
+// See documentation for WebResultContainer and WebResult.
 func (client Client) Web(parameters Parameters) (WebResultContainer, error) {
 	var result WebResultWrapper
 
@@ -50,7 +54,9 @@ func (client Client) Web(parameters Parameters) (WebResultContainer, error) {
 	return result.Data, nil
 }
 
-// News - executing News type Bing web API search
+// News - executing News type Bing web API search. Returns a NewsResultContainer
+// containing a slice of NewsResult and an URI for next page.
+// See documentation for NewsResultContainer and NewsResult.
 func (client Client) News(parameters Parameters) (NewsResultContainer, error) {
 	var result NewsResultWrapper
 
@@ -61,7 +67,9 @@ func (client Client) News(parameters Parameters) (NewsResultContainer, error) {
 	return result.Data, nil
 }
 
-// Image - executing Image type Bing Image API search
+// Image - executing Image type Bing Image API search. Returns an ImageResultContainer
+// containing a slice of ImageResult and an URI for next page.
+// See documentation for ImageResultContainer and ImageResult.
 func (client Client) Image(parameters Parameters) (ImageResultContainer, error) {
 	var result ImageResultWrapper
 
@@ -72,7 +80,9 @@ func (client Client) Image(parameters Parameters) (ImageResultContainer, error) 
 	return result.Data, nil
 }
 
-// Video - executing Video type Bing web API search
+// Video - executing Video type Bing web API search. Returns a VideoResultContainer
+// containing a slice of VideoResult and an URI for next page.
+// See documentation for VideoResultContainer and VideoResult.
 func (client Client) Video(parameters Parameters) (VideoResultContainer, error) {
 	var result VideoResultWrapper
 
@@ -83,7 +93,9 @@ func (client Client) Video(parameters Parameters) (VideoResultContainer, error) 
 	return result.Data, nil
 }
 
-// Related - executing Related type Bing Related API search
+// Related - executing Related type Bing Related API search. Returns a RelatedResultContainer
+// containing a slice of RelatedResult and an URI for next page.
+// See documentation for RelatedResultContainer and RelatedResult.
 func (client Client) Related(parameters Parameters) (RelatedResultContainer, error) {
 	var result RelatedResultWrapper
 
