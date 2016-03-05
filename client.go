@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-// Client will contain static parameters for the API call
+// Client contains http and auth parameters for the API call.
 type Client struct {
 	AccKey     string // Bing access key
 	Method     string // Http method

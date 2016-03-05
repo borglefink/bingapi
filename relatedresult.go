@@ -5,7 +5,7 @@
 
 package bingapi
 
-// RelatedResult holds releated results from a Bing Web API search
+// RelatedResult receives a single result from the Bing search.
 type RelatedResult struct {
 	MetaData MetaData `json:"__metadata"`
 	ID       string
@@ -13,13 +13,15 @@ type RelatedResult struct {
 	BingUrl  string
 }
 
-// RelatedResultContainer holds the RelatedResults
+// RelatedResultContainer receives a slice of RelatedResult
+// and a pre-made URL for getting more results
 type RelatedResultContainer struct {
 	Results     []RelatedResult `json:"results"`
 	NextPageURL string          `json:"__next"`
 }
 
-// RelatedResultWrapper
+// RelatedResultWrapper is the outer wrapper for the result.
+// Not used for more than receiving the resultcontainer.
 type RelatedResultWrapper struct {
 	Data RelatedResultContainer `json:"d"`
 }

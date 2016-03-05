@@ -5,7 +5,7 @@
 
 package bingapi
 
-// NewsResult holds the result from a News type Bing Web API search
+// NewsResult receives a single result from the Bing search.
 type NewsResult struct {
 	MetaData    MetaData `json:"__metadata"`
 	ID          string
@@ -16,13 +16,15 @@ type NewsResult struct {
 	Date        string
 }
 
-// NewsResultContainer holds the NewsResults
+// NewsResultContainer receives a slice of NewsResult
+// and a pre-made URL for getting more results
 type NewsResultContainer struct {
 	Results     []NewsResult `json:"results"`
 	NextPageURL string       `json:"__next"`
 }
 
-// NewsResultWrapper
+// NewsResultWrapper is the outer wrapper for the result.
+// Not used for more than receiving the resultcontainer.
 type NewsResultWrapper struct {
 	Data NewsResultContainer `json:"d"`
 }

@@ -5,7 +5,7 @@
 
 package bingapi
 
-// VideoResult holds the result from a Video type Bing Web API search
+// VideoResult receives a single result from the Bing search.
 type VideoResult struct {
 	MetaData   MetaData `json:"__metadata"`
 	ID         string
@@ -16,13 +16,15 @@ type VideoResult struct {
 	Thumbnail  Thumbnail
 }
 
-// VideoResultContainer holds the VideoResults
+// VideoResultContainer receives a slice of VideoResult
+// and a pre-made URL for getting more results
 type VideoResultContainer struct {
 	Results     []VideoResult `json:"results"`
 	NextPageURL string        `json:"__next"`
 }
 
-// VideoResultWrapper
+// VideoResultWrapper is the outer wrapper for the result.
+// Not used for more than receiving the resultcontainer.
 type VideoResultWrapper struct {
 	Data VideoResultContainer `json:"d"`
 }

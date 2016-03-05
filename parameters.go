@@ -9,7 +9,8 @@ import (
 	"strconv"
 )
 
-// SearchParameters holds the query parameters for all types of Bing Web API search
+// Parameters holds the query parameters for all types of Bing Web API search
+// See Bing Web API documentation for the correct combination for each type of search.
 type Parameters struct {
 	Query                string  // Required
 	Skip                 int     // How may records to skip in the result
@@ -31,7 +32,7 @@ type Parameters struct {
 	RootURI              string  // Root URI for Bing search
 }
 
-// GetParameters gets a new Parameters object with default values
+// GetParameters gets a Parameters object with default values set.
 func GetParameters(query string) Parameters {
 	return Parameters{
 		Query:   query,
@@ -41,27 +42,30 @@ func GetParameters(query string) Parameters {
 	}
 }
 
-// SetSources sets values for Sources in Parameters.
-// Only used with Composite search.
+// SetSources sets values for Sources.
+// This is only used with composite search.
 func (p *Parameters) SetSources(sources string) Parameters {
 	p.Sources = defaultIfEmpty(p.Sources, sources)
 	return *p
 }
 
-// SetPage sets the Skip value to the correct value,
-// based on the current Top value and the given 0-based page.
+// SetPage sets Skip to the correct value,
+// based on the current Top (page size) value
+// and the given 0-based page number.
 func (p *Parameters) SetPage(page int) Parameters {
 	p.Skip = page * p.Top
 	return *p
 }
 
-// ExactSearch sets the parameter to disable query alterations.
+// ExactSearch sets the option to disable query alterations
+// for web type search.
 func (p *Parameters) ExactSearch() Parameters {
 	p.WebSearchOptions = "DisableQueryAlterations"
 	return *p
 }
 
-// GetURI returns Parameters as a string.
+// GetURI returns the URI string based on the parameters set,
+// and the given search type.
 func (p Parameters) GetURI(searchType string) string {
 	var uri = p.RootURI + searchType
 

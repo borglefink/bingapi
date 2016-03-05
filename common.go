@@ -4,7 +4,7 @@
 
 package bingapi
 
-// Constants for bingapi
+// Private constants for bingapi
 const (
 	bingAPIRootURI    = "https://api.datamarket.azure.com/Bing/Search/v1/" // Bing Search API URI
 	bingAPIUserAgent  = "Bing Search Client for Go"                        // Bing UserAgent
@@ -26,13 +26,17 @@ const (
 	SearchTypeRelated   = "Related"   // Related type Bing Web API search
 )
 
-// MetaData holds meta data for each result
+// MetaData holds meta data for each result.
+// This is really just the URI for the specific result
+// Metadata is describing, and the type of result.
+// See e.g. the WebResult struct.
 type MetaData struct {
 	Uri        string `json:"uri"`
 	ResultType string `json:"type"`
 }
 
-// Thumbnail holds thumbnail data from a Video or Image type Bing Web API search
+// Thumbnail holds thumbnail data for an ImageResult or a VideoResult
+// from a Bing Web API search.
 type Thumbnail struct {
 	MediaUrl    string
 	ContentType string

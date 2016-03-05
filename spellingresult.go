@@ -5,20 +5,10 @@
 
 package bingapi
 
-// SpellResult holds spelling suggestions from a Bing Web API search
+// SpellResult receives a spelling suggestion from the Bing search.
+// This struct is used with composite search.
 type SpellResult struct {
 	MetaData MetaData `json:"__metadata"`
 	ID       string
 	Value    string
-}
-
-// SpellResultContainer holds the SpellResults
-type SpellResultContainer struct {
-	Results     []SpellResult `json:"results"`
-	NextPageURL string        `json:"__next"`
-}
-
-// SpellResultWrapper
-type SpellResultWrapper struct {
-	Data SpellResultContainer `json:"d"`
 }

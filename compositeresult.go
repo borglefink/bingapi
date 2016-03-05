@@ -5,19 +5,21 @@
 
 package bingapi
 
-// CompositeResult holds the result from a composite Bing Web API search
+// CompositeResult receives all results from a composite Bing search.
+// The totals and offsets below are in the Bing documentation described as int64,
+// but in the received json they were strings.
 type CompositeResult struct {
 	MetaData                 MetaData `json:"__metadata"`
 	ID                       string
-	WebTotal                 string
-	WebOffset                string
-	ImageTotal               string
-	ImageOffset              string
-	VideoTotal               string
-	VideoOffset              string
-	NewsTotal                string
-	NewsOffset               string
-	SpellingSuggestionsTotal string
+	WebTotal                 string // originally int64
+	WebOffset                string // originally int64
+	ImageTotal               string // originally int64
+	ImageOffset              string // originally int64
+	VideoTotal               string // originally int64
+	VideoOffset              string // originally int64
+	NewsTotal                string // originally int64
+	NewsOffset               string // originally int64
+	SpellingSuggestionsTotal string // originally int64
 	AlteredQuery             string
 	AlterationOverrideQuery  string
 	Web                      []WebResult
@@ -28,12 +30,14 @@ type CompositeResult struct {
 	SpellingSuggestions      []SpellResult
 }
 
-// CompositeResultContainer holds the CompositeResult
+// CompositeResultContainer receives a slice of CompositeResult.
+// Only the first element in the slice is used.
 type CompositeResultContainer struct {
 	Results []CompositeResult `json:"results"`
 }
 
-// CompositeResultWrapper
+// CompositeResultWrapper is the outer wrapper for the result.
+// Not used for more than receiving the resultcontainer.
 type CompositeResultWrapper struct {
 	Data CompositeResultContainer `json:"d"`
 }

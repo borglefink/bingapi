@@ -5,7 +5,7 @@
 
 package bingapi
 
-// ImageResult holds the result from a Image type Bing Web API search
+// ImageResult receives a single result from the Bing search.
 type ImageResult struct {
 	MetaData    MetaData `json:"__metadata"`
 	ID          string
@@ -20,13 +20,15 @@ type ImageResult struct {
 	Thumbnail   Thumbnail
 }
 
-// ImageResultContainer holds the ImageResults
+// ImageResultContainer receives a slice of ImageResult
+// and a pre-made URL for getting more results
 type ImageResultContainer struct {
 	Results     []ImageResult `json:"results"`
 	NextPageURL string        `json:"__next"`
 }
 
-// ImageResultWrapper
+// ImageResultWrapper is the outer wrapper for the result.
+// Not used for more than receiving the resultcontainer.
 type ImageResultWrapper struct {
 	Data ImageResultContainer `json:"d"`
 }

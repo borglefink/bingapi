@@ -5,7 +5,7 @@
 
 package bingapi
 
-// WebResult holds the result from a Web type Bing Web API search
+// WebResult receives a single result from the Bing search.
 type WebResult struct {
 	MetaData    MetaData `json:"__metadata"`
 	ID          string
@@ -15,13 +15,15 @@ type WebResult struct {
 	Url         string
 }
 
-// WebResultContainer holds the WebResults
+// WebResultContainer receives a slice of WebResult
+// and a pre-made URL for getting more results
 type WebResultContainer struct {
 	Results     []WebResult `json:"results"`
 	NextPageURL string      `json:"__next"`
 }
 
-// WebResultWrapper
+// WebResultWrapper is the outer wrapper for the result.
+// Not used for more than receiving the resultcontainer.
 type WebResultWrapper struct {
 	Data WebResultContainer `json:"d"`
 }
