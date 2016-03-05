@@ -31,14 +31,14 @@ const (
 // Metadata is describing, and the type of result.
 // See e.g. the WebResult struct.
 type MetaData struct {
-	Uri        string `json:"uri"`
+	URI        string `json:"uri"`
 	ResultType string `json:"type"`
 }
 
 // Thumbnail holds thumbnail data for an ImageResult or a VideoResult
 // from a Bing Web API search.
 type Thumbnail struct {
-	MediaUrl    string
+	MediaURL    string `json:"MediaUrl"`
 	ContentType string
 	Width       int32
 	Height      int32

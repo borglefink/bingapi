@@ -10,9 +10,9 @@ type ImageResult struct {
 	MetaData    MetaData `json:"__metadata"`
 	ID          string
 	Title       string
-	MediaUrl    string
-	SourceUrl   string
-	DisplayUrl  string
+	MediaURL    string `json:"MediaUrl"`
+	SourceURL   string `json:"SourceUrl"`
+	DisplayURL  string `json:"DisplayUrl"`
 	Width       int32
 	Height      int32
 	FileSize    int64

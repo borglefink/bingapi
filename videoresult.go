@@ -10,8 +10,8 @@ type VideoResult struct {
 	MetaData   MetaData `json:"__metadata"`
 	ID         string
 	Title      string
-	MediaUrl   string
-	DisplayUrl string
+	MediaURL   string   `json:"MediaUrl"`
+	DisplayURL string   `json:"DisplayUrl"`
 	RunTime    int32
 	Thumbnail  Thumbnail
 }

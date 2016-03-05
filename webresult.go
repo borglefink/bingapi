@@ -11,8 +11,8 @@ type WebResult struct {
 	ID          string
 	Title       string
 	Description string
-	DisplayUrl  string
-	Url         string
+	DisplayURL  string   `json:"DisplayUrl"`
+	URL         string   `json:"Url"`
 }
 
 // WebResultContainer receives a slice of WebResult
