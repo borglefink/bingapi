@@ -10,7 +10,7 @@ type NewsResult struct {
 	MetaData    MetaData `json:"__metadata"`
 	ID          string
 	Title       string
-	URL         string	 `json:"MediaUrl"`
+	URL         string `json:"Url"`
 	Source      string
 	Description string
 	Date        string

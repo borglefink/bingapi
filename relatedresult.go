@@ -10,7 +10,7 @@ type RelatedResult struct {
 	MetaData MetaData `json:"__metadata"`
 	ID       string
 	Title    string
-	BingURL  string   `json:"BingUrl"`
+	BingURL  string `json:"BingUrl"`
 }
 
 // RelatedResultContainer receives a slice of RelatedResult
