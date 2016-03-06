@@ -6,9 +6,9 @@
 Package bingapi is an implementation of the Bing Search API.
 So, what is the Bing Search API? Microsoft explains:
 
-  The Bing Search API enables developers to embed search results in applications
-  or websites using XML or JSON. Add search functionality to a website, create
-  unique consumer or enterprise apps, or develop new mash-ups.
+  The Bing Search API enables developers to embed search results in applications or
+  websites using XML or JSON. Add search functionality to a website, create unique
+  consumer or enterprise apps, or develop new mash-ups.
 
 Registered users can (as of this writing) have 5000 queries/month
 for free, after that a fee is applied (until the next month).
@@ -82,7 +82,7 @@ the json below, and this needs to be put into Go structs.
         },
         "ID": "03cfa295-fe87-4fd4-b919-0f85841a67d1",
         "Title": "Xbox | Official Site",
-        "Description": "Experience the new generation of games and entertainment with Xbox. Play Xbox games and stream video on all your devices.",
+        "Description": "Experience the new generation of games and entertainment with Xbox.",
         "DisplayUrl": "www.xbox.com",
         "Url": "http://www.xbox.com/"
       }, {
