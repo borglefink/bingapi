@@ -73,20 +73,37 @@ func (p Parameters) GetURI(searchType string) string {
 	uri += addEscaped("Query", p.Query)
 	uri += addPaging("top", p.Top)
 	uri += addPaging("skip", p.Skip)
-	uri += addOptionalEscaped("Sources", p.Sources)
 	uri += addParameter("Adult", p.Adult)
-	uri += addParameter("ImageFilters", p.ImageFilters)
 	uri += addFloat("Latitude", p.Latitude)
 	uri += addFloat("Longitude", p.Longitude)
 	uri += addParameter("Market", p.Market)
-	uri += addParameter("NewsCategory", p.NewsCategory)
-	uri += addParameter("NewsLocationOverride", p.NewsLocationOverride)
-	uri += addParameter("NewsSortBy", p.NewsSortBy)
 	uri += addParameter("Options", p.Options)
-	uri += addParameter("VideoFilters", p.VideoFilters)
-	uri += addParameter("VideoSortBy", p.VideoSortBy)
-	uri += addParameter("WebFileType", p.WebFileType)
-	uri += addParameter("WebSearchOptions", p.WebSearchOptions)
+
+	switch searchType {
+	case SearchTypeComposite:
+		p.SetSources(defaultSources)
+		uri += addEscaped("Sources", p.Sources)
+		uri += addParameter("ImageFilters", p.ImageFilters)
+		uri += addParameter("NewsCategory", p.NewsCategory)
+		uri += addParameter("NewsLocationOverride", p.NewsLocationOverride)
+		uri += addParameter("NewsSortBy", p.NewsSortBy)
+		uri += addParameter("VideoFilters", p.VideoFilters)
+		uri += addParameter("VideoSortBy", p.VideoSortBy)
+		uri += addParameter("WebFileType", p.WebFileType)
+		uri += addParameter("WebSearchOptions", p.WebSearchOptions)
+	case SearchTypeWeb:
+		uri += addParameter("WebFileType", p.WebFileType)
+		uri += addParameter("WebSearchOptions", p.WebSearchOptions)
+	case SearchTypeNews:
+		uri += addParameter("NewsCategory", p.NewsCategory)
+		uri += addParameter("NewsLocationOverride", p.NewsLocationOverride)
+		uri += addParameter("NewsSortBy", p.NewsSortBy)
+	case SearchTypeImage:
+		uri += addParameter("ImageFilters", p.ImageFilters)
+	case SearchTypeVideo:
+		uri += addParameter("VideoFilters", p.VideoFilters)
+		uri += addParameter("VideoSortBy", p.VideoSortBy)
+	}
 
 	return uri
 }
