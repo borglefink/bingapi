@@ -4,13 +4,11 @@
 
 /*
 Package bingapi is an implementation of the Bing Search API.
-So, what is the Bing Search API? Microsoft says:
+So, what is the Bing Search API? Microsoft explains:
 
-  What is the Bing Search API?
-  The Bing Search API enables developers to embed search
-  results in applications or websites using XML or JSON.
-  Add search functionality to a website, create unique
-  consumer or enterprise apps, or develop new mash-ups.
+  The Bing Search API enables developers to embed search results in applications
+  or websites using XML or JSON. Add search functionality to a website, create
+  unique consumer or enterprise apps, or develop new mash-ups.
 
 Registered users can (as of this writing) have 5000 queries/month
 for free, after that a fee is applied (until the next month).
