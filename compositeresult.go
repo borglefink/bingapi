@@ -6,7 +6,7 @@
 package bingapi
 
 // CompositeResult receives all results from a composite Bing search.
-// The totals and offsets below are in the Bing documentation described as int64,
+// The totals and offsets are in the Bing documentation described as int64,
 // but in the received json they were strings.
 type CompositeResult struct {
 	MetaData                 MetaData `json:"__metadata"`
