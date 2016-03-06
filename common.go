@@ -18,12 +18,12 @@ const (
 
 // Constants for searchtypes
 const (
-	SearchTypeComposite = "Composite" // Composite type Bing Web API search
-	SearchTypeWeb       = "Web"       // Web type Bing Web API search
-	SearchTypeNews      = "News"      // News type Bing Web API search
-	SearchTypeImage     = "Image"     // Image type Bing Web API search
-	SearchTypeVideo     = "Video"     // Video type Bing Web API search
-	SearchTypeRelated   = "Related"   // Related type Bing Web API search
+	SearchTypeComposite = "Composite" // Composite type Bing Search API search
+	SearchTypeWeb       = "Web"       // Web type Bing Search API search
+	SearchTypeNews      = "News"      // News type Bing Search API search
+	SearchTypeImage     = "Image"     // Image type Bing Search API search
+	SearchTypeVideo     = "Video"     // Video type Bing Search API search
+	SearchTypeRelated   = "Related"   // Related type Bing Search API search
 )
 
 // MetaData holds meta data for each result.
@@ -36,7 +36,7 @@ type MetaData struct {
 }
 
 // Thumbnail holds thumbnail data for an ImageResult or a VideoResult
-// from a Bing Web API search.
+// from a Bing Search API search.
 type Thumbnail struct {
 	MediaURL    string `json:"MediaUrl"`
 	ContentType string

@@ -9,8 +9,8 @@ import (
 	"strconv"
 )
 
-// Parameters holds the query parameters for all types of Bing Web API search
-// See Bing Web API documentation for the correct combination for each type of search.
+// Parameters holds the query parameters for all types of Bing Search API search
+// See Bing Search API documentation for the correct combination for each type of search.
 type Parameters struct {
 	Query                string  // Required
 	Skip                 int     // How may records to skip in the result

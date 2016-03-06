@@ -28,7 +28,7 @@ func GetClient(accessKey string) Client {
 	}
 }
 
-// Composite - executing Composite type Bing Web API search. Returns a CompositeResultContainer
+// Composite - executing Composite type Bing Search API search. Returns a CompositeResultContainer
 // containing a slice of CompositeResult, where only the first element is used.
 // See documentation for CompositeResultContainer and CompositeResult.
 func (client Client) Composite(parameters Parameters) (CompositeResultContainer, error) {
@@ -41,7 +41,7 @@ func (client Client) Composite(parameters Parameters) (CompositeResultContainer,
 	return result.Data, nil
 }
 
-// Web - executing Web type Bing Web API search. Returns a WebResultContainer
+// Web - executing Web type Bing Search API search. Returns a WebResultContainer
 // containing a slice of WebResult and an URI for next page.
 // See documentation for WebResultContainer and WebResult.
 func (client Client) Web(parameters Parameters) (WebResultContainer, error) {
@@ -54,7 +54,7 @@ func (client Client) Web(parameters Parameters) (WebResultContainer, error) {
 	return result.Data, nil
 }
 
-// News - executing News type Bing web API search. Returns a NewsResultContainer
+// News - executing News type Bing Search API search. Returns a NewsResultContainer
 // containing a slice of NewsResult and an URI for next page.
 // See documentation for NewsResultContainer and NewsResult.
 func (client Client) News(parameters Parameters) (NewsResultContainer, error) {
@@ -80,7 +80,7 @@ func (client Client) Image(parameters Parameters) (ImageResultContainer, error) 
 	return result.Data, nil
 }
 
-// Video - executing Video type Bing web API search. Returns a VideoResultContainer
+// Video - executing Video type Bing Search API search. Returns a VideoResultContainer
 // containing a slice of VideoResult and an URI for next page.
 // See documentation for VideoResultContainer and VideoResult.
 func (client Client) Video(parameters Parameters) (VideoResultContainer, error) {
