@@ -4,11 +4,22 @@
 
 /*
 Package bingapi is an implementation of the Bing Search API.
-Read more about the Bing Search API at the Azure Data Marketplace
-https://datamarket.azure.com/dataset/bing/search.
+So, what is the Bing Search API? Microsoft says:
+
+  What is the Bing Search API?
+  The Bing Search API enables developers to embed search
+  results in applications or websites using XML or JSON.
+  Add search functionality to a website, create unique
+  consumer or enterprise apps, or develop new mash-ups.
+
+Registered users can (as of this writing) have 5000 queries/month
+for free, after that a fee is applied (until the next month).
+Read more about the Bing Search API at the Azure Data Marketplace,
+see https://datamarket.azure.com/dataset/bing/search.
 
 To be able to use the Bing Search API an authorization key is needed.
-Get it from the Azure Data Marketplace Account Keys https://datamarket.azure.com/account/keys.
+Get it from the Azure Data Marketplace Account Keys,
+see https://datamarket.azure.com/account/keys.
 
 Example of usage:
 
@@ -34,13 +45,39 @@ Example of usage:
   	}
   }
 
-The datastructures for returning the result are described separately,
+
+There are 7 different search formats; Web, News, Image, Video, Related, Spelling and Composite, the latter being a combination of the previous formats, and Spelling being returned with the Composite format.
+The parameters to the various formats differ, so be sure to use the correct parameters with each format. The relevant parameters are described below.
+
+  Query                string  // All formats
+  Adult                string  // All formats
+  Latitude             float64 // All formats
+  Longitude            float64 // All formats
+  Market               string  // All formats
+  Options              string  // All formats
+
+  Sources              string  // Composite, web+image+video+news+spell
+
+  ImageFilters         string  // Image, Composite (when Sources=image)
+
+  NewsCategory         string  // News, Composite (when Sources=news)
+  NewsLocationOverride string  // News, Composite (when Sources=news)
+  NewsSortBy           string  // News, Composite (when Sources=news)
+
+  VideoFilters         string  // Video, Composite (when Sources=video)
+  VideoSortBy          string  // Video, Composite (when Sources=video)
+
+  WebFileType          string  // Web, Composite (when Sources=web)
+  WebSearchOptions     string  // Web, Composite (when Sources=web)
+
+
+The data structures for returning the result are described separately,
 but the gist of it is that Bing returns a json structure similar to
 the json below, and this needs to be put into Go structs.
 
-  {
-    "d": {
-      "results": [{
+  {                          // e.g. WebResultWrapper
+    "d": {                   // e.g. WebResultContainer
+      "results": [{          // e.g. []WebResult
         "__metadata": {
             "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Web?Query=\u0027xbox\u0027&$skip=0&$top=0",
             "type": "WebResult"

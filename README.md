@@ -37,26 +37,31 @@ func main() {
 
 To understand the Bing Search API in depth, please refer to the Azure web site describing it in [more detail](https://datamarket.azure.com/dataset/bing/search).
 
-There are 7 different search formats; Web, News, Image, Video, Related, Spelling and Composite, the latter being a combination of the previous formats. The parameters to the mentioned formats differ, so when using the parameter class some care is necessary. The relevant parameters are categorised below.
+There are 7 different search formats; Web, News, Image, Video, Related, Spelling and Composite, the latter being a combination of the previous formats, and Spelling being returned with the Composite format.
 
-```Go
-type Parameters struct {
-	Query                string  // All formats
-	Sources              string  // Composite, web+image+video+news+spell
-	Adult                string  // All formats
-	ImageFilters         string  // Image, Composite (when Sources=image)
-	Latitude             float64 // All formats
-	Longitude            float64 // All formats
-	Market               string  // All formats
-	NewsCategory         string  // News, Composite (when Sources=news)
-	NewsLocationOverride string  // News, Composite (when Sources=news)
-	NewsSortBy           string  // News, Composite (when Sources=news)
-	Options              string  // All formats
-	VideoFilters         string  // Video, Composite (when Sources=video)
-	VideoSortBy          string  // Video, Composite (when Sources=video)
-	WebFileType          string  // Web, Composite (when Sources=web)
-	WebSearchOptions     string  // Web, Composite (when Sources=web)
-}
+The parameters to the various formats differ, so be sure to use the correct parameters with each format. The relevant parameters are described below.
+
+```
+Query                string  // All formats
+Adult                string  // All formats
+Latitude             float64 // All formats
+Longitude            float64 // All formats
+Market               string  // All formats
+Options              string  // All formats
+
+Sources              string  // Composite, web+image+video+news+spell
+
+ImageFilters         string  // Image, Composite (when Sources=image)
+
+NewsCategory         string  // News, Composite (when Sources=news)
+NewsLocationOverride string  // News, Composite (when Sources=news)
+NewsSortBy           string  // News, Composite (when Sources=news)
+
+VideoFilters         string  // Video, Composite (when Sources=video)
+VideoSortBy          string  // Video, Composite (when Sources=video)
+
+WebFileType          string  // Web, Composite (when Sources=web)
+WebSearchOptions     string  // Web, Composite (when Sources=web)
 ```
 
 
