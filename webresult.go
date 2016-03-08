@@ -22,8 +22,8 @@ type WebResultContainer struct {
 	NextPageURL string      `json:"__next"`
 }
 
-// WebResultWrapper is the outer wrapper for the result.
+// webResultWrapper is the outer wrapper for the result.
 // Not used for more than receiving the resultcontainer.
-type WebResultWrapper struct {
+type webResultWrapper struct {
 	Data WebResultContainer `json:"d"`
 }

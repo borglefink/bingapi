@@ -20,8 +20,8 @@ type RelatedResultContainer struct {
 	NextPageURL string          `json:"__next"`
 }
 
-// RelatedResultWrapper is the outer wrapper for the result.
+// relatedResultWrapper is the outer wrapper for the result.
 // Not used for more than receiving the resultcontainer.
-type RelatedResultWrapper struct {
+type relatedResultWrapper struct {
 	Data RelatedResultContainer `json:"d"`
 }

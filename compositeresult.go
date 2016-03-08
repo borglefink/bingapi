@@ -36,8 +36,8 @@ type CompositeResultContainer struct {
 	Results []CompositeResult `json:"results"`
 }
 
-// CompositeResultWrapper is the outer wrapper for the result.
+// compositeResultWrapper is the outer wrapper for the result.
 // Not used for more than receiving the resultcontainer.
-type CompositeResultWrapper struct {
+type compositeResultWrapper struct {
 	Data CompositeResultContainer `json:"d"`
 }

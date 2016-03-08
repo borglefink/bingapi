@@ -23,8 +23,8 @@ type NewsResultContainer struct {
 	NextPageURL string       `json:"__next"`
 }
 
-// NewsResultWrapper is the outer wrapper for the result.
+// newsResultWrapper is the outer wrapper for the result.
 // Not used for more than receiving the resultcontainer.
-type NewsResultWrapper struct {
+type newsResultWrapper struct {
 	Data NewsResultContainer `json:"d"`
 }

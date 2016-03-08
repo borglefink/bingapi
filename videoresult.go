@@ -23,8 +23,8 @@ type VideoResultContainer struct {
 	NextPageURL string        `json:"__next"`
 }
 
-// VideoResultWrapper is the outer wrapper for the result.
+// videoResultWrapper is the outer wrapper for the result.
 // Not used for more than receiving the resultcontainer.
-type VideoResultWrapper struct {
+type videoResultWrapper struct {
 	Data VideoResultContainer `json:"d"`
 }

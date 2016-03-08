@@ -27,8 +27,8 @@ type ImageResultContainer struct {
 	NextPageURL string        `json:"__next"`
 }
 
-// ImageResultWrapper is the outer wrapper for the result.
+// imageResultWrapper is the outer wrapper for the result.
 // Not used for more than receiving the resultcontainer.
-type ImageResultWrapper struct {
+type imageResultWrapper struct {
 	Data ImageResultContainer `json:"d"`
 }

@@ -32,7 +32,7 @@ func GetClient(accessKey string) Client {
 // containing a slice of CompositeResult, where only the first element is used.
 // See documentation for CompositeResultContainer and CompositeResult.
 func (client Client) Composite(parameters Parameters) (CompositeResultContainer, error) {
-	var result CompositeResultWrapper
+	var result compositeResultWrapper
 
 	if err := client.search(parameters.GetURI(SearchTypeComposite), &result); err != nil {
 		return CompositeResultContainer{}, err
@@ -45,7 +45,7 @@ func (client Client) Composite(parameters Parameters) (CompositeResultContainer,
 // containing a slice of WebResult and an URI for next page.
 // See documentation for WebResultContainer and WebResult.
 func (client Client) Web(parameters Parameters) (WebResultContainer, error) {
-	var result WebResultWrapper
+	var result webResultWrapper
 
 	if err := client.search(parameters.GetURI(SearchTypeWeb), &result); err != nil {
 		return WebResultContainer{}, err
@@ -58,7 +58,7 @@ func (client Client) Web(parameters Parameters) (WebResultContainer, error) {
 // containing a slice of NewsResult and an URI for next page.
 // See documentation for NewsResultContainer and NewsResult.
 func (client Client) News(parameters Parameters) (NewsResultContainer, error) {
-	var result NewsResultWrapper
+	var result newsResultWrapper
 
 	if err := client.search(parameters.GetURI(SearchTypeNews), &result); err != nil {
 		return NewsResultContainer{}, err
@@ -71,7 +71,7 @@ func (client Client) News(parameters Parameters) (NewsResultContainer, error) {
 // containing a slice of ImageResult and an URI for next page.
 // See documentation for ImageResultContainer and ImageResult.
 func (client Client) Image(parameters Parameters) (ImageResultContainer, error) {
-	var result ImageResultWrapper
+	var result imageResultWrapper
 
 	if err := client.search(parameters.GetURI(SearchTypeImage), &result); err != nil {
 		return ImageResultContainer{}, err
@@ -84,7 +84,7 @@ func (client Client) Image(parameters Parameters) (ImageResultContainer, error) 
 // containing a slice of VideoResult and an URI for next page.
 // See documentation for VideoResultContainer and VideoResult.
 func (client Client) Video(parameters Parameters) (VideoResultContainer, error) {
-	var result VideoResultWrapper
+	var result videoResultWrapper
 
 	if err := client.search(parameters.GetURI(SearchTypeVideo), &result); err != nil {
 		return VideoResultContainer{}, err
@@ -97,7 +97,7 @@ func (client Client) Video(parameters Parameters) (VideoResultContainer, error) 
 // containing a slice of RelatedResult and an URI for next page.
 // See documentation for RelatedResultContainer and RelatedResult.
 func (client Client) Related(parameters Parameters) (RelatedResultContainer, error) {
-	var result RelatedResultWrapper
+	var result relatedResultWrapper
 
 	if err := client.search(parameters.GetURI(SearchTypeRelated), &result); err != nil {
 		return RelatedResultContainer{}, err
