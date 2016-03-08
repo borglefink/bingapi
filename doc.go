@@ -45,7 +45,7 @@ Example of usage:
 
 
 There are 7 different search formats; Web, News, Image, Video, Related, Spelling and Composite, the latter being a combination of the previous formats, and Spelling being returned with the Composite format.
-The parameters to the various formats differ, so be sure to use the correct parameters with each format. The relevant parameters are described below.
+The parameters to the various searches differ, so be sure to use the correct parameters with each format, as described below.
 
   Query                string  // All formats
   Adult                string  // All formats
@@ -73,7 +73,7 @@ The data structures for returning the result are described separately,
 but the gist of it is that Bing returns a json structure similar to
 the json below, and this needs to be put into Go structs.
 
-  {                          // e.g. WebResultWrapper
+  {                          // (wrapper)
     "d": {                   // e.g. WebResultContainer
       "results": [{          // e.g. []WebResult
         "__metadata": {
