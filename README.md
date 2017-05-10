@@ -1,7 +1,7 @@
 [![GoDoc](https://godoc.org/github.com/borglefink/bingapi?status.svg)](https://godoc.org/github.com/borglefink/bingapi)
 # bingapi #
 
-An implementation in Go of the Bing Search APIv2, which was closed down 31st of March 2017. 
+An implementation in Go of the Bing Search API v2, which was closed down 31st of March 2017. 
 
 Read more about the Bing Search API at the [Azure Data Marketplace](https://datamarket.azure.com/dataset/bing/search).
 
