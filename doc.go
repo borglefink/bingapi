@@ -3,7 +3,9 @@
 // license that can be found in the LICENSE file.
 
 /*
-Package bingapi is an implementation of the Bing Search API.
+Package bingapi is an implementation of the Bing Search API v2,
+which was closed down 31st of March 2017.
+
 So, what is the Bing Search API? Microsoft explains:
 
   The Bing Search API enables developers to embed search results in applications or
