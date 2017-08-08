@@ -1,3 +1,5 @@
+## NB: Bing Search API v2 was closed down 31st of March 2017
+
 [![GoDoc](https://godoc.org/github.com/borglefink/bingapi?status.svg)](https://godoc.org/github.com/borglefink/bingapi)
 # bingapi #
 
